@@ -59,6 +59,7 @@ button:hover{
 .checkboxes{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .checkboxes input {

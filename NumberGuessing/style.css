@@ -1,17 +1,17 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body{
+body {
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main-container{
+.main-container {
     text-align: center;
     background-color: aqua;
     padding: 20px;
@@ -19,36 +19,78 @@ body{
     box-shadow: 1px 1px 9px hsl(0, 2%, 80%);
 }
 
-h1{
+h1 {
     margin: 20px 10px;
 }
 
-input{
+input {
     margin: 20px 10px;
     font-size: 1.5em;
     text-align: center;
 }
 
-button{
+button {
     font-size: 1.5em;
     padding: 7px 15px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     background-color: rgb(241, 62, 98);
+    margin: 20px;
 }
 
-button:hover{
+.reset{
+    background-color: rgb(237, 43, 43);
+}
+.enter{
+    background-color: rgb(58, 212, 58);
+}
+
+/* Add transition for smooth animations */
+button,
+input {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
     background-color: crimson;
-    
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-p{
+button:active {
+    transform: scale(0.95);
+}
+
+input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+p {
     font-size: 25px;
     margin: 15px 0px;
     margin-bottom: 0px;
 }
 
-#attempts{
+/* Add animation for result display */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#result {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#attempts {
     margin-top: 5px;
 }

@@ -1,4 +1,3 @@
-
 function passwordGenerate() {
     let password = "";
     const length = document.getElementById("LengthOfPassword").value;
@@ -30,5 +29,11 @@ function passwordGenerate() {
         }
         result.textContent = password;
     }
-
 }
+
+// Added event listener for Enter key
+document.getElementById("LengthOfPassword").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        passwordGenerate();
+    }
+});

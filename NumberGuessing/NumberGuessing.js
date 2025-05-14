@@ -21,6 +21,21 @@ function guessing() {
     else {
         Result.textContent = `the guess is too low`;
     }
-    
+
 }
+function resetGame() {
+    attempt = 0;
+    Result.textContent = "";
+    attempts.textContent = "";
+    document.getElementById("textBox").value = "";
+    document.getElementById("textBox").focus();
+    guessing();
+}
+
+// Add event listener for Enter key
+document.getElementById("textBox").addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        guessing();
+    }
+});
 

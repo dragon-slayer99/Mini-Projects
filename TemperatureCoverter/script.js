@@ -6,23 +6,30 @@ const result = document.getElementById("result");
 let temp;
 
 
-function convert(){
-    if(fahrenheit.checked){
+function convert() {
+    if (fahrenheit.checked) {
         temp = Number(TextBox.value);
         temp = (temp - 32) * (5 / 9);
         result.textContent = `${temp.toFixed(1)} °C`;
     }
-    else if(celsius.checked){
+    else if (celsius.checked) {
         temp = Number(TextBox.value);
         temp = (temp * 9 / 5) + 32;
         result.textContent = `${temp.toFixed(1)} °F`;
     }
-    else if(Kelvin.checked){
+    else if (Kelvin.checked) {
         temp = Number(TextBox.value);
         temp = temp + 273.15;
         result.textContent = `${temp.toFixed(1)} °K`;
     }
-    else{
+    else {
         result.textContent = "Select a radio button";
     }
 }
+
+// Added event listener for Enter key
+addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        convert();
+    }
+});
